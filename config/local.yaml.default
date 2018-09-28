@@ -1,0 +1,24 @@
+app_base_path: /path/to/application/DIR/
+
+tmp_dirs:
+    sources: data/sources/
+    derivatives: data/derivatives/
+    
+logging:
+    version: 1
+    formatters:
+        defaultFormatter:
+            format: '%(asctime)s %(levelname)s %(module)s:%(funcName)s:%(lineno)d - %(message)s'
+    handlers:
+        defaultHandler:
+            class: logging.handlers.RotatingFileHandler
+            level: DEBUG
+            formatter: defaultFormatter
+            filename: /Users/kford1/Work/dsenv/lakederivatives/data/log/lakederivatives.log
+            maxBytes: 1000000
+            backupCount: 3
+    root:
+        level: DEBUG
+        handlers: [defaultHandler]
+
+

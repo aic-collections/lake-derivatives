@@ -1,0 +1,36 @@
+lakeshoreThumb:
+    source_mimetype: "image/tiff"
+    derivative_mimetype: "image/png"
+    cmd: 'convert %SOURCE% -resize "200x150>" -auto-orient -channel RGBA -matte %DERIVATIVE%'
+
+citiThumb:
+    source_mimetype: "image/tiff"
+    derivative_mimetype: "image/png"
+    cmd: 'convert %SOURCE% -resize "96x96>" -auto-orient -channel RGBA -matte %DERIVATIVE%'
+
+citiLarge:
+    source_mimetype: "image/tiff"
+    derivative_mimetype: "image/jpeg"
+    cmd: 'convert %SOURCE% -resize "1024x1024>" -auto-orient -channel RGBA -matte %DERIVATIVE%'
+
+imageAccessMaster:
+    source_mimetype: "image/tiff"
+    derivative_mimetype: "image/jp2"
+    safe_cmd: '/opt/local/bin/opj_compress -i %SOURCE% -o %DERIVATIVE%'
+    cmd_safe: 'convert %SOURCE% -resize "3000x3000>" -auto-orient -channel RGBA -matte %DERIVATIVE%'
+    cmd: 'convert %SOURCE% -resize "3000x3000>" -auto-orient -channel RGBA -matte -define jp2:tilewidth=256 -define jp2:tileheight=256 %DERIVATIVE%'
+
+mp32mp3:
+    source_mimetype: "audio/mpeg"
+    derivative_mimetype: "audio/mpeg"
+    cmd: 'cp %SOURCE% %DERIVATIVE%'
+    
+wav2mp3:
+    source_mimetype: "audio/wav"
+    derivative_mimetype: "audio/mpeg"
+    cmd: 'ffmpeg -y -i %SOURCE% -vn -ab 320k -f mp3 %DERIVATIVE%'
+
+avi2mpeg:
+    source_mimetype: "video/avi"
+    derivative_mimetype: "video/mpeg"
+    cmd: 'ffmpeg -y -i %SOURCE% -ab 320k -f mpeg %DERIVATIVE%'
