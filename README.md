@@ -42,6 +42,12 @@ You can now start Lake Derivatives:
 NB: The above command is predicated on not altering the location of the config 
 file *and* maintaining its current name (config.yaml).
 
+# API
+
+GET `/profiles/list` - List available profiles.  
+GET `/profiles/<profile_id>/view` - View a specific profile.
+GET `/profiles/<profile_id>/convert` - Execute a specific profile.
+
 # Running in production
 
 Gunicorn - a WSGI HTTP Server - can be used for production.  You will need to modify
@@ -53,8 +59,6 @@ cp app/wsgi.py.default app/wsgi.py
 ~~~
 
 Open each file and edit as needed.
-
-This software is not currently deployed.
 
 # License
 
