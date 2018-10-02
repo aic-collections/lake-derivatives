@@ -44,9 +44,9 @@ file *and* maintaining its current name (config.yaml).
 
 # API
 
-GET `/profiles/list` - List available profiles.  
-GET `/profiles/<profile_id>/view` - View a specific profile.
-GET `/profiles/<profile_id>/convert` - Execute a specific profile.
+- GET `/profiles/list` - List available profiles.  
+- GET `/profiles/<profile_id>/view` - View a specific profile. 
+- GET `/profiles/<profile_id>/convert` - Execute a specific profile.
 
 # Running in production
 
