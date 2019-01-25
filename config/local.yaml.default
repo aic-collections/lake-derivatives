@@ -1,5 +1,9 @@
 app_base_path: /path/to/application/DIR/
 
+lake_fcrepo:
+    user: u
+    pass: p
+    
 tmp_dirs:
     sources: data/sources/
     derivatives: data/derivatives/

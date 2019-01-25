@@ -51,9 +51,12 @@ class Convert:
         
         if source_file.startswith("http"):
             # Must fetch content from URI
+            auth=("user", "password")
+            if "lakesuperior.artic.edu/fcrepo/" in source_file:
+                auth=(self.config["lake_fcrepo"]["user"], self.config["lake_fcrepo"]["pass"])
             
             self.session = requests.Session()
-            with self.session.get(source_file, stream=True) as r:
+            with self.session.get(source_file, auth=auth, stream=True) as r:
                 # print(str(r.status_code))
                 if r.status_code == 404:
                     response_object = {
