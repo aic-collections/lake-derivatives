@@ -66,6 +66,9 @@ def load_app(configpath, profilespath):
     if not config["tmp_dirs"]["source"].startswith('/'):
         config["tmp_dirs"]["source"] = config["app_base_path"] + config["tmp_dirs"]["source"]
     
+    if not config["tmp_dirs"]["tmpsources"].startswith('/'):
+        config["tmp_dirs"]["tmpsources"] = config["app_base_path"] + config["tmp_dirs"]["tmpsources"]
+    
     if not config["tmp_dirs"]["output"].startswith('/'):
         config["tmp_dirs"]["output"] = config["app_base_path"] + config["tmp_dirs"]["output"]
 
@@ -84,6 +87,9 @@ if __name__ == "__main__":
     
     if not config["tmp_dirs"]["sources"].startswith('/'):
         config["tmp_dirs"]["sources"] = config["app_base_path"] + config["tmp_dirs"]["sources"]
+    
+    if not config["tmp_dirs"]["tmpsources"].startswith('/'):
+        config["tmp_dirs"]["tmpsources"] = config["app_base_path"] + config["tmp_dirs"]["tmpsources"]
     
     if not config["tmp_dirs"]["derivatives"].startswith('/'):
         config["tmp_dirs"]["derivatives"] = config["app_base_path"] + config["tmp_dirs"]["derivatives"]
