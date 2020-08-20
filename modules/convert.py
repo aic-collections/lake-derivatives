@@ -90,7 +90,12 @@ class Convert:
                     for chunk in r.iter_content(10240):
                         f.write(chunk)
                 
-        elif not source_file.startsWith("/"):
+        elif source_file.startswith("/"):
+            self.source_path = source_file
+            source_file_parts = source_file.split('/')
+            fname = source_file_parts[-1]
+        
+        else: 
             # We have a problem, Tex.
             response_object = {
                 "status": "Error: Invalid source file, niether begins with 'http' or '/'.",
@@ -103,7 +108,9 @@ class Convert:
         derivative_path = self.config["tmp_dirs"]["derivatives"] + derivative_filename
         # print(derivative_path)
         cmd = cmd.replace('%DERIVATIVE%', derivative_path)
-        # print(cmd)
+        if '%TMPSOURCE%' in cmd:
+            tmpfile = self.config["tmp_dirs"]["tmpsources"] + fname
+            cmd = cmd.replace('%TMPSOURCE%', tmpfile)
         try:
             output = subprocess.check_output(cmd, shell=True)
             # print(output.decode("utf8"))
