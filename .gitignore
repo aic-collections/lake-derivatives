@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 *.log
+*.log.*
 *.db
 *.yaml
 *.pid
@@ -13,12 +14,13 @@ data/sources/*.*
 
 !.gitkeep
 
-#*.jpg
-#*.mp3
-#*.jp2
-#*.tiff
-#*.tif
-#*.png
+*.jpg
+*.jpeg
+*.mp3
+*.jp2
+*.tiff
+*.tif
+*.png
 
 wsgi.py
 config/*.py
