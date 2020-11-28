@@ -26,6 +26,7 @@ class Convert:
         "audio/mpeg": "mp3",
         "video/x-flv": "flv",
         "video/mpeg": "mpeg",
+        "application/pdf": "pdf",
     }
     
     def __init__(self, config, profile, profile_id):
