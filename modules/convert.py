@@ -27,6 +27,7 @@ class Convert:
         "video/x-flv": "flv",
         "video/mpeg": "mpeg",
         "application/pdf": "pdf",
+        "text/plain": "txt"
     }
     
     def __init__(self, config, profile, profile_id):
@@ -113,6 +114,7 @@ class Convert:
             tmpfile = self.config["tmp_dirs"]["tmpsources"] + fname
             cmd = cmd.replace('%TMPSOURCE%', tmpfile)
         try:
+            # print(cmd)
             output = subprocess.check_output(cmd, shell=True)
             # print(output.decode("utf8"))
                 
