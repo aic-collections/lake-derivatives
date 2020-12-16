@@ -42,3 +42,9 @@ pdf2pdf:
     source_mimetype: "application/pdf"
     derivative_mimetype: "application/pdf"
     cmd: 'cp %SOURCE% %DERIVATIVE%'
+    
+txt2txt:
+    source_mimetype: "text/plain"
+    derivative_mimetype: "text/plain"
+    cmd: 'cp %SOURCE% %DERIVATIVE%'
+
