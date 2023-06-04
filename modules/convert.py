@@ -126,12 +126,11 @@ class Convert:
         except subprocess.CalledProcessError as err:
             error_msg = "Return code: {}; Cmd: {}; Output: {}".format(err.returncode, err.cmd, err.output)
                 
-            json_response = '{"status": "Error - ' + error_msg + '"}'
-            response = Response(json_response, status=500)
-            response.headers['Content-type'] = "application/json"
-            return response
-            
-            raise
+            json_response = {"status": "Error - " + error_msg }
+            # response = Response(json_response, status=500)
+            # response.headers['Content-type'] = "application/json"
+            return json_response
+            # raise
     
         #with open(derivative_path, 'rb') as f:
         #    content = f.read()
