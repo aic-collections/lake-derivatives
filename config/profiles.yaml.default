@@ -37,7 +37,12 @@ avi2mpeg:
     source_mimetype: "video/avi"
     derivative_mimetype: "video/mpeg"
     cmd: 'ffmpeg -y -i %SOURCE% -ab 320k -f mpeg %DERIVATIVE%'
-    
+
+jpg2jpg:
+    source_mimetype: "image/jpeg"
+    derivative_mimetype: "image/jpeg"
+    cmd: 'cp %SOURCE% %DERIVATIVE%'
+
 pdf2pdf:
     source_mimetype: "application/pdf"
     derivative_mimetype: "application/pdf"
