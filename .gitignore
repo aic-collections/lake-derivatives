@@ -25,3 +25,5 @@ data/sources/*.*
 wsgi.py
 config/*.py
 
+
+deploy*
